@@ -4,12 +4,21 @@ html {
 	background-color: #56baed;
 }
 body {
-	background-color: #202124;
+	background-color: #343a40;
 }
 
 body {
 	font-family: "Poppins", sans-serif;
 	height: 100vh;
+}
+
+.add {
+	font-size: 2em;
+	fill: white;
+	transition: .25s;
+}
+.add:hover {
+	fill: grey;
 }
 
 a {
@@ -94,11 +103,11 @@ input[type=reset] {
 	-webkit-border-radius: 5px 5px 5px 5px;
 	border-radius: 5px 5px 5px 5px;
 	margin: 5px 20px 40px 20px;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
 input[type=button]:hover,
@@ -130,11 +139,11 @@ input[type=password] {
 	margin: 5px;
 	width: 85%;
 	border: 2px solid #f6f6f6;
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	-ms-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 	-webkit-border-radius: 5px 5px 5px 5px;
 	border-radius: 5px 5px 5px 5px;
 }
@@ -150,14 +159,17 @@ input[type=text]:placeholder {
 	color: #cccccc;
 }
 
+input[type=submit]:hover {
+	cursor: pointer;
+}
 /* ANIMATIONS */
 
 /* Simple CSS3 Fade-in-down Animation */
 .fadeInDown {
 	-webkit-animation-name: fadeInDown;
 	animation-name: fadeInDown;
-	-webkit-animation-duration: 1s;
-	animation-duration: 1s;
+	-webkit-animation-duration: .5s;
+	animation-duration: .5ss;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
 }
@@ -216,17 +228,17 @@ input[type=text]:placeholder {
 
 .fadeIn {
 	opacity: 0;
-	-webkit-animation: fadeIn ease-in 1;
-	-moz-animation: fadeIn ease-in 1;
-	animation: fadeIn ease-in 1;
+	-webkit-animation: fadeIn ease-in .5s;
+	-moz-animation: fadeIn ease-in .5s;
+	animation: fadeIn ease-in .5s;
 
 	-webkit-animation-fill-mode: forwards;
 	-moz-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
 
-	-webkit-animation-duration: 1s;
-	-moz-animation-duration: 1s;
-	animation-duration: 1s;
+	-webkit-animation-duration: .5s;
+	-moz-animation-duration: .5s;
+	animation-duration: .5s;
 }
 
 .fadeIn.first {
@@ -281,4 +293,114 @@ input[type=text]:placeholder {
 
 #icon {
 	width: 60%;
+}
+
+/* NAVIGATION */
+@import 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans';
+.navbar-brand {
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+}
+
+.navbar .nav {
+	font-family: 'Open Sans', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: 1.2rem;
+}
+
+.navbar-inverse {
+	background-color: #003300;
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+	background-color: #002200;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+	background-color: #003300;
+}
+
+.dropdown-menu {
+	background-color: #006b00;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+	background-color: #002200;
+}
+
+.navbar-inverse {
+	background-image: none;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+	background-image: none;
+}
+
+.navbar-inverse {
+	border-color: #003300;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #ffffff;
+}
+
+.navbar-inverse .navbar-brand:hover {
+	color: #ffcc00;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+	color: #ffcc00;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+	color: #ffcc00;
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+	color: #ffcc00;
+}
+
+.dropdown-menu > li > a {
+	color: #ffffff;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+	color: #ffcc00;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a .caret {
+	border-top-color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
+	border-top-color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a .caret {
+	border-bottom-color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
+	border-bottom-color: #ffffff;
 }

@@ -1,1 +1,30 @@
-<h1>Welcome Home</h1>
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>
+         Login
+      </title>
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <link href="main.css" rel="stylesheet">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script>
+         //var notes = "<%= notes[0] %>";
+         console.log(notes);
+         console.log(myNote);
+      </script>
+      <style>
+         body {background-color: white;}
+      </style> 
+   </style>
+   </head>
+   <body>
+    <% for(var i=0; i < notes.length; i++) { %>
+
+          <h2><%= notes[i]['title'] %></h2>
+          <p><%= notes[i].['date_created'] %></p>          
+          <p><%= notes[i].['content'] %></p>
+     <% } %>
+
+   </body>
+</html>
