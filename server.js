@@ -68,6 +68,8 @@ app.post('/login', (req, res) => {
 
 //logout
 app.post('/logout', (req, res) => {
+	// you got here, now just destroy session and send to create account page
+	// also create partial for head
 	if (ssn.email) {
 		console.log('logged in');
 	}

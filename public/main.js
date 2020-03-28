@@ -1,4 +1,5 @@
 function logout() {
+	console.log('in main js file');
 	$.post('/logout', function(result) {
 		if (result && result.success) {
 			$('#status').text('Successfully logged out.');
