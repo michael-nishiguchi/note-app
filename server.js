@@ -6,7 +6,7 @@ var express = require('express');
 const app = express();
 var router = express.Router();
 const path = require('path');
-const port = 3000;
+//const port = 3000;
 const bcrypt = require('bcryptjs');
 
 var session = require('express-session');
@@ -18,7 +18,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
-app.listen(port, () => console.log('Running on ' + port));
+//app.listen(port, () => console.log('Running on ' + port));
+app.set('port', process.env.PORT || 5000);
+app.listen(app.get('port'), function() {
+	console.log('Node server is running on port ' + app.get('port'));
+});
+
 router.use(express.static(path.join(__dirname, 'public')));
 
 //login
