@@ -9,3 +9,14 @@ function logout() {
 		}
 	});
 }
+
+function add() {
+	$.get('/add', function() {
+		if (result && result.success) {
+			$('#status').text('Successfully logged in.');
+		}
+		else {
+			$('#status').text('Error logging in.');
+		}
+	});
+}

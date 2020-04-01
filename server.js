@@ -16,6 +16,7 @@ var ssn;
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.set('view engine', 'ejs');
 
 app.listen(port, () => console.log('Running on ' + port));
 router.use(express.static(path.join(__dirname, 'public')));
@@ -27,6 +28,7 @@ app.post('/login', (req, res) => {
 	var email = req.body.email;
 	var password = req.body.password;
 	let hash = bcrypt.hashSync(password, 10);
+	console.log(hash);
 
 	var sql = 'SELECT * FROM user_account WHERE email = $1 LIMIT 1';
 	pool.query(sql, [ email ], function(err, result) {
@@ -34,6 +36,7 @@ app.post('/login', (req, res) => {
 			console.error('Error running query', err);
 		}
 		else {
+			console.log(result.rows);
 			bcrypt.compare(password, result.rows[0].password, function(err, same) {
 				if (err) {
 					console.error('Error comparing passwords', err);
@@ -49,7 +52,7 @@ app.post('/login', (req, res) => {
 							}
 
 							ssn.email = email;
-							res.render('notes.ejs', {
+							res.render('notes', {
 								//notes: JSON.stringify(result.rows),
 								email: email,
 								notes: result.rows,
@@ -76,5 +79,25 @@ app.post('/logout', (req, res) => {
 	else {
 		console.log('not set');
 	}
+});
+
+app.get('/add', (req, res) => {
+	console.log('In the add');
+	//res.redirect('add.ejs');
+	result = { success: true };
+	res.render('add.ejs'),
+		function(err, html) {
+			res.send(html);
+		};
+	console.log('after add');
+});
+
+app.get('/', (req, res) => {
+	res.redirect('login.html');
+});
+
+router.get('/about.ejs', (req, res) => {
+	console.log('Request for about page recieved');
+	res.render('about');
 });
 app.use('/', router);
